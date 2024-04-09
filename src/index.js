@@ -2,7 +2,11 @@ const express = require("express");
 
 const app = express();
 
-app.post("/", (req,res)=> {
+app.get("/",(req,res)=>{
+    res.status(200).json({message: "get"})
+}
+)
+app.post("/",function (req,res) {
     console.log(req);
     res.status(200).json({message:"ok"})
 })
